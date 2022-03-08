@@ -1,4 +1,144 @@
 {% extends "base.html" %}
 {% block content %}
-Index Page
+<div class="container">
+            <div>
+                <marquee>Welcome to my Website! Its content gives a brief overview of Technologies learned in IS601 class.</marquee>
+            </div>
+            <div class="row border border-danger mb-5">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <a href ="/page1">
+                            <img src="{{ url_for('static', filename='images/GIT-Tutorial2.jpeg') }}" class="d-block w-100" alt="...">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href ="/page2">
+                            <img src="{{ url_for('static', filename='images/Docker_Architecture.jpeg') }}" class="d-block w-100" alt="...">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href ="/page3">
+                            <img src="{{ url_for('static', filename='images/flask.jpeg') }}" class="d-block w-100" alt="...">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href ="/page4">
+                            <img src="{{ url_for('static', filename='images/CI_CD.jpeg') }}" class="d-block w-100" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon text-danger " aria-hidden="true"></span>
+                        <span class="visually-hidden ">Previous</span>
+                    </button>
+                    <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon text-danger" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <!--<div class="row">
+                <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text
+                                card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text
+                                card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text
+                                card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+    <div class="row mb-3">
+        <div class="col-sm-3 d-flex align-items-stretch">
+            <div class="card text-white bg-danger">
+                <div class="card-header">
+                    Git
+                </div>
+                <div class="card-body bg-light">
+                    <p class="card text-dark font18 ">Visit link below to explore GitHub</p>
+                    <a href="https://github.com/" class="card-link darkgrey" target="_blank">https://github.com/</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 d-flex align-items-stretch">
+            <div class="card text-white bg-danger">
+                <div class="card-header">
+                    Docker and DockerHub
+                </div>
+                <div class="card-body bg-light">
+                    <p class="card text-dark font18">Visit link below to explore Docker</p>
+                    <a href="https://www.docker.com/" class="card-link darkgrey" target="_blank" >https://www.docker.com/</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 d-flex align-items-stretch">
+            <div class="card text-white bg-danger">
+                <div class="card-header">
+                    Python and Flask
+                </div>
+                <div class="card-body bg-light">
+                    <p class="card text-dark font18  ">Visit link below to explore Python</p>
+                    <a href="https://www.python.org/" class="card-link darkgrey" target="_blank">https://www.python.org/</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 d-flex align-items-stretch">
+            <div class="card text-white bg-danger">
+                <div class="card-header">
+                    CI/CD
+                </div>
+                <div class="card-body bg-light">
+                    <p class="card text-dark font18">Visit link below to explore CI/CD</p>
+                    <a href="https://docs.microsoft.com/en-us/azure/app-service/deploy-github-actions?tabs=applevel" target="_blank" class="card-link darkgrey">https://docs.microsoft.com/github</a>
+                </div>
+
+            </div>
+
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -1,4 +1,163 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 1
+    <div class="container-fluid py-3"><h4><u>What is Git?</u></h4>
+        <p class="fs-5"><span class="fs-3">G</span>it is a fast, scalable, distributed revision control system with an
+            unusually rich command set that provides both high-level operations and full access to internals
+            It is used for tracking changes in the source code during software development.
+            It was developed in 2005 by Linus Torvalds, the creator of the Linux operating system kernel.
+            Git is an efficient distributed VCS tool that can handle projects from small to very large ones providing
+            cheap local branching, convenient staging areas, and multiple workflows.</p>
+        <div class="row align-items-start">
+            <div class="col-8">
+                <h4><u>What is Git Repository ?</u></h4>
+                <p class="fs-5"><span class="fs-3">A</span>fter you install Git, you can initialize it onto a project
+                    to create a new Git repo. A Git repository is the .git/ folder inside a project.
+                    This repository tracks all changes made to files in your project, building a history over time.
+                    Meaning, if you delete the .git/ folder, then you delete your project’s history.</p>
+            </div>
+            <div class="col-8">
+                <h4><u>What is Git Branch ?</u></h4>
+                <p class="fs-5"><span class="fs-3">A</span> branch in Git is simply a lightweight movable pointer to
+                    one of the commits. The default branch name in Git is master. As you start making commits,
+                    you’re given a master branch that points to the last commit you made.
+                    Every time you commit, the master branch pointer moves forward automatically.</p>
+            </div>
+            <div class="col-8"  >
+                <p class="fs-5"><span class="fs-4">Creating a New Branch:</span>Let’s say you want to create a new
+                    branch called testing. You do this with the git branch command:This creates a new pointer to the
+                    same commit you’re currently on.Two branches pointing into the same series of commits
+                    How does Git know what branch you’re currently on? It keeps a special pointer called HEAD.
+                    In this case, you’re still on master. The git branch command only created a new branch
+                    it didn’t switch to that branch
+                </p>
+            </div>
+            <div class="col-4">
+                <div class="listingblock">
+                    <div class="content">
+                        <pre class="highlight"><code class="language-console" data-lang="console">$ git branch testing</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8"  >
+                <p class="fs-5"><span class="fs-4">Switching a Branch:</span>To switch to an existing branch, you run
+                    the git checkout command. This moves HEAD to point to the testing branch
+                    .Switching branches changes files in your working directory.It’s important to note that when you
+                    switch branches in Git, files in your working directory will change. If you switch to an older branch,
+                    your working directory will be reverted to look like it did the last time you committed on that branch.
+                    If Git cannot do it cleanly, it will not let you switch at all.</p>
+            </div>
+            <div class="col-4">
+                <div class="listingblock">
+                    <div class="content">
+                        <pre class="highlight"><code class="language-console" data-lang="console">$ git checkout testing</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <p class="fs-5"><span class="fs-4">Creating/Switching branch at same time :</span>
+                    It’s typical to create a new branch and want to switch to
+                    that new branch at the same time this can
+                    be done in one operation with</p>
+            </div>
+                <div class="col-4">
+                    <div class="listingblock">
+                        <div class="content">
+                            <pre class="highlight"><code class="language-console" data-lang="console">$ git checkout -b < newbranchname > </code></pre>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-8">
+                <h4><u>What is Git Merge ?</u></h4>
+                <p class="fs-5"><span class="fs-3">A</span> The primary use of git merge is to combine two branches.
+                    It is also used to merge multiple commits into one history.
+                    In the following illustration, git merge takes two branch tips and finds a common case commit
+                    between them. The common base commit creates a new commit that merges the changes of the sequence
+                    of each merge commit. Here we have two branches: a master and a stage. We should merge the stage
+                    branch to the master branch..</p>
+            </div>
+            <div class="col-8">
+                <p class="fs-5"><span class="fs-4">How Merging works: </span>
+                    Before the merging process we should take some steps.
+                    <ul class="fs-5">
+                    <li>Firstly, invoke git status so that to point HEAD to the correct merge-receiving branch.
+                        Run git checkout < receiving branch > to switch to the receiving branch.</li>
+                    <li>The next step is to fetch latest remote commits. The receiving branch and the merging branch should be
+                    updated with the latest remote changes. Invoke git fetch to pull the latest remote commits.
+                        After the fetching process invoke git pull to update the master branch.</li>
+                    <li>The final step is executing git merge < branch name> which is the name of the branch to be merged into the receiving branch.</li></p>
+                    </ul >
+            </div>
+                <div class="col-4">
+                    <div class="listingblock">
+                        <div class="content">
+                            <pre class="highlight"><code class="language-console" data-lang="console">$ git status</code></pre>
+                        </div>
+                        <div class="content">
+                            <pre class="highlight"><code class="language-console" data-lang="console">$ git checkout < receiving branch ></code></pre>
+                        </div>
+                        <div class="content" >
+                            <pre class="highlight"><code class="language-console" data-lang="console">$git merge < branch name > </code></pre>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-8">
+                <h4><u>What is Git Commit ?</u></h4>
+                <p class="fs-5"><span class="fs-3">W</span>hen  we are ready move from stage to commit for our repo.
+                    Adding commits keep track of our progress and changes as we work. Git considers each commit
+                    change point or "save point". It is a point in the project you can go back to if you find a bug,
+                    or want to make a change.
+                    When we commit, we should always include a message.
+                    By adding clear messages to each commit, it is easy for yourself (and others) to
+                    see what has changed and when..</p>
+            </div>
+            <div class="col-8">
+                <p class="fs-5"><span class="fs-4">How Commit works: </span>
+                    The commit command performs a commit, and the -m "message" adds a message.
+            </div>
+            <div class="col-4">
+                    <div class="listingblock">
+                        <div class="content">
+                            <pre class="highlight"><code class="language-console" data-lang="console">$git commit -m "message" </code></pre>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-8">
+                    <h4><u>What is Git TAG ?</u></h4>
+                    <p class="fs-5"><span class="fs-3">L</span>ike most VCSs, Git has the ability to tag specific
+                        points in a repository’s history as being important. Typically, people use this functionality
+                        to mark release points (v1.0, v2.0 and so on).</p>
+
+            </div>
+            <div class="col-8">
+                    <p class="fs-5"><span class="fs-3"></span>
+                    <ul class = "fs-5"><li>Listing the existing tags in Git is straightforward. Just type git tag (with optional -l or --list):
+                        Creating an annotated tag in Git is simple.</li>
+                        <li>The easiest way is to specify -a when you run
+                            the tag command:The -m specifies a tagging message</li>
+                        <li>To create a lightweight tag, don’t supply any of the -a, -s, or -m options, just provide a tag name:</li>
+                <li>Sharing tags:This process is just like sharing remote branch you can run git push origin < tagname>.</li>
+                            <li>To delete a tag on your local repository, you can use git tag -d < tagname ></li>
+                </ul></p>
+
+            </div>
+            <div class="col-4">
+                        <div class="listingblock">
+                            <div class="content">
+                                <pre class="highlight"><code class="language-console" data-lang="console">$ git tag --l </code></pre>
+                            </div>
+                            <div class="content">
+                                <pre class="highlight"><code class="language-console" data-lang="console">$ git tag -a v1.4 -m "my version 1.4"</code></pre>
+                            </div>
+                            <div class="content" >
+                                <pre class="highlight"><code class="language-console" data-lang="console">$git push origin v1.5 </code></pre>
+                            </div>
+                            <div class="content" >
+                                <pre class="highlight"><code class="language-console" data-lang="console">$git push origin v1.5 </code></pre>
+                            </div>
+                        </div>
+            </div>
+
+        </div>
+    </div>
+
 {% endblock %}
