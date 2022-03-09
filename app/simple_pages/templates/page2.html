@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="container-fluid py-3"><h4><u>What is Docker?</u></h4>
-        <p class="fs-5"><span class="fs-3">D</span>Docker is an open platform for developing, shipping, and running applications.
+        <p class="fs-5"><span class="fs-3">D</span>ocker is an open platform for developing, shipping, and running applications.
             Docker enables you to separate your applications from your infrastructure.With Docker, you can manage
             your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s
             methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the
             delay between writing code and running it in production.
         </p>
-
+        <div class="row align-items-start">
+        <div class="col-8">
         <h4><u>What is a docker container?</u></h4>
         <p class="fs-5"><span class="fs-3">A</span> A container is a runnable instance of an image. You can create,
             start, stop, move, or delete a container using the Docker API or CLI. You can connect a container
@@ -16,14 +17,27 @@
             By default, a container is relatively well isolated from other containers and its host machine .
             You can control how isolated a container’s network, storage, or other underlying subsystems are
             from other containers or from the host machine.</p>
+        </div>
+        <div class="col-4"><img src="/static/images/docker-container.png"
+                                class="img-fluid"
+                                alt="container">
+        </div>
+        </div>
+
     </div>
     <div class="row align-items-start">
-        <div class="col-8">
+        <div class="col-6">
             <h4><u>Common Docker Commands</u></h4>
             <ul class="fs-5">
                 <li><strong><em>docker compose up</em></strong> -Docker Compose up command deploys web app services and
                     creates fresh new containers from the docker image along with setting up networks,
                     volumes and every configuration specified within the Docker Compose file.
+                </li>
+                <li><strong><em>docker image </em></strong> – List all Docker images.
+
+                </li>
+                <li><strong><em>docker run </em></strong> – LRuns a command in a new container.
+
                 </li>
                 <li><strong><em>docker start</em></strong> – Starts one or more stopped containers.
 
@@ -35,41 +49,50 @@
                 <li><strong><em>docker pull</em></strong> – Pulls an image or a repository from a registry.
 
                 </li>
+                <li><strong><em>docker < container_id></em></strong> – Removes Container.
+
+                </li>
+
             </ul>
         </div>
-        <div class="col-4"><img src="/static/images/Container.png"
-                                class="img-fluid"
-                                alt="container">
-            <img src="/static/images/docker3.png"
+        <div class="col-6">
+            <img src="/static/images/Docker.jpg"
                  class="img-fluid"
                  alt="docker3">
         </div>
         <div class="container-fluid">
             <div class="row align-items-start">
-                <div class="col-5">
+                <div class>
                     <h4><u>How to start docker container?</u></h4>
-                    <p class="fs-5"><span class="fs-3">H</span>ere is the link to pull container to run this website
-                        locally.
-                        <a href="https://hub.docker.com/repository/docker/dsouzarohit/flask-application"> Docker-Project
-                            1</a>
+                    <p class="fs-5"><span class="fs-3"></span>
                         Image can be pulled from command line using command <br><em>docker pull
                            dsouzarohit/flask-application:tagname </em></p>
 
                     <p class="fs-5">After image is pulled one should navigate to a folder containing image and from
                         there it can be started using command <em>docker compose up --build</em>
                     </p>
-                    <p class="fs-5">When procces completes, simply go to browser and open http://localhost:80</p>
+                    <p class="fs-5">When process completes, simply go to browser and open http://localhost:80</p>
 
                 </div>
 
-                <div class="col-7"><img src="/static/images/composeup.JPG"
-                                        class="img-fluid"
-                                        alt="composeup">
                 </div>
 
 
             </div>
         </div>
+        <div class="row">
+
+
+            <div>
+                    <h5 class="">Link for the Docker Image to download on your local:</h5>
+                    <p class="fs-5"><a href="https://hub.docker.com/repository/docker/dsouzarohit/flask-application">Docker Image</a>
+
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
     </div>
 
     </div>

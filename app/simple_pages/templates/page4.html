@@ -1,4 +1,142 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 4
+    <div class="row">
+
+        <div >
+            <h2>CI/CD</h2>
+            <h5>Continuous Integration</h5>
+            <p class="fs-5">
+               <em> Continuous Integration is a software development practice where members of a team
+                   integrate their work frequently.Each integration is verified by an automated build (including test)
+                   to detect integration errors as quickly as possible.Many teams find that this approach
+                   leads to significantly reduced integration problems and allows a team to develop
+                   cohesive software more rapidly. </em><sup><a
+                    href="https://www.martinfowler.com/articles/continuousIntegration.html"
+                    target="_blank">[1]</a></sup>
+                    <footer class="blockquote-footer fs-5 ">Martin Fowler</footer>
+            </p>
+        </div>
+        <div class="col-6">
+            <h5> TIPS to build your first Continuous Integration Project</h5>
+            <ul class="fs-5">
+                <li>Get everything you need into source control get it so that you can build
+                    the whole system with a single command.</li>
+                <li>Introduce some automated testing into your build</li>
+                <li>Try to identify the major areas where things go wrong and
+                    get automated tests to expose those failures</li>
+                <li>Try to speed up the commit build.</li>
+                <li>Every Commit Should Build the Mainline on an Integration Machine</li>
+                <li>Fix Broken Builds Immediately</li>
+                <li>Test in a Clone of the Production Environment</li>
+                <li>Make it Easy for Anyone to Get the Latest Executable</li>
+                <li>Automate Deployment</li>
+            </ul>
+        </div>
+        <div class="col-6">
+                    <img src="/static/images/CI_CD.png" class="img-fluid py-5" alt="prodwork">
+        </div>
+            <div class="col-8">
+                <h5>Continuous Delivery</h5>
+                <p class ="fs-5"><em>Continuous Delivery is a software development discipline where you build software
+                    in such a way that the software can be released to production at any time.You achieve continuous
+                    delivery by continuously integrating the software done by the development team, building executables ,
+                    and running automated tests on those executables to detect problems. </em><sup><a
+                    href="https://www.martinfowler.com/bliki/ContinuousDelivery.html"
+                    target="_blank">[2]</a></sup>
+                    <footer class="blockquote-footer fs-5 ">Martin Fowler</footer>
+                </p>
+                <p class="fs-5">
+                <h5>TIPS for continuous delivery across your project :</h5>
+                </p>
+                <ul class="fs-5">
+                    <li>DevOpsCulture:A close, collaborative working relationship between everyone involved in delivery.
+                    </li>
+                    <li>DeploymentPipeline:Extensive automation of all possible parts of the delivery process
+                    </li>
+                </ul>
+                <div class="fs-5">
+                    <h5 >How my Project is setup with GitHub Actions:</h5>
+                    GITHub Actions is the CI/CD pipeline we are using for our project.
+                    <ul class="list-unstyled">
+                <li>
+                    1. Create a new GitHub repository
+                </li>
+                <li>
+                    2. Create a new Docker repository in Dockerhub
+                </li>
+                <li>
+                    3. Create Heroku production app
+                </li>
+                <li>
+                    4. Create Heroku Development app
+                </li>
+                <li>
+                    5. Create API key within Heroku
+                </li>
+                <li>
+                    6. Add “secrets” to the GitHub
+                </li>
+                <li>
+                    7. Update info in prod.yml and dev.yml workflow files
+                </li>
+            </ul>
+                </div>
+                <pre>
+                </pre>
+                <div>
+                    <h5>Development Workflow</h5>
+                    <p class="fs-5">
+                        Whenever a Pull Request is created for changes, the development workflow is triggered.
+                        During the development workflow, the following events happen:
+                    </p>
+                    <ul class="fs-5">
+                        <li>Runs  test for configuration,context process and html pages.</li>
+                        <li>The image is then deployed to the dev app on Heroku only if all test cases pass.</li>
+                        <li>Any new commits that go into the PR will trigger the workflow again.</li>
+                        <li> feature changes can be viewed on the dev heroku app's url.</li>
+                        <li>Using the dev app's url anybody can review the code.</li>
+                    </ul>
+                </div>
+                <div>
+                    <pre>
+
+                    </pre>
+                    <h5>Production Workflow</h5>
+                    <p class="fs-5">
+                       When the Pull Request is merged into master, the production workflow is triggered.
+                        In the production workflow, the following events happen:
+                    </p>
+                    <ul class="fs-5">
+                        <li>changes are committed from dev to master.</li>
+                        <li>The merge triggers the workflow .</li>
+                        <li>Runs  test for configuration,context process and html pages.</li>
+                        <li>The docker image is built and uploaded to the docker hub.</li>
+                        <li>The docker image is then deployed to the dev app on Heroku</li>
+                        <li>Using the prod app's url you can check the workflow.</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-4">
+                    <img src="/static/images/Dev_WorkFlow.JPG" class="img-fluid" alt="prodwork">
+                    <img src="/static/images/dev_git.JPG" class="img-fluid py-2" alt="workflow">
+                    <img src="/static/images/Prod_Workflow.JPG" class="img-fluid py-2" alt="workflow1">
+                    <img src="/static/images/prod_git.JPG" class="img-fluid py-2" alt="workflow">
+                 </div>
+
+
+
+     <div class="row">
+
+
+            <div>
+                    <h5 class="">Citations</h5>
+                    <p class="fs-5"><a href="https://www.martinfowler.com/articles/continuousIntegration.html">[1]https://www.martinfowler.com/articles/continuousIntegration.htm</a>
+                        <a href="https://www.martinfowler.com/bliki/ContinuousDelivery.html">[2]https://www.martinfowler.com/bliki/ContinuousDelivery.html</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
 {% endblock %}
