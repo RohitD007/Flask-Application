@@ -7,6 +7,7 @@
             It was developed in 2005 by Linus Torvalds, the creator of the Linux operating system kernel.
             Git is an efficient distributed VCS tool that can handle projects from small to very large ones providing
             cheap local branching, convenient staging areas, and multiple workflows.</p>
+
         <div class="row align-items-start">
             <div class="col-8">
                 <h4><u>What is Git Repository ?</u></h4>
@@ -15,6 +16,9 @@
                     This repository tracks all changes made to files in your project, building a history over time.
                     Meaning, if you delete the .git/ folder, then you delete your project’s history.</p>
             </div>
+            <div class="col-4">
+                    <img src="/static/images/git_repo.jpg" class="img-fluid py-5" alt="prodwork">
+        </div>
             <div class="col-8">
                 <h4><u>What is Git Branch ?</u></h4>
                 <p class="fs-5"><span class="fs-3">A</span> branch in Git is simply a lightweight movable pointer to
@@ -22,6 +26,9 @@
                     you’re given a master branch that points to the last commit you made.
                     Every time you commit, the master branch pointer moves forward automatically.</p>
             </div>
+            <div class="col-4">
+                    <img src="/static/images/branch.jpg" class="img-fluid py-5" alt="prodwork">
+             </div>
             <div class="col-8"  >
                 <p class="fs-5"><span class="fs-4">Creating a New Branch:</span>Let’s say you want to create a new
                     branch called testing. You do this with the git branch command:This creates a new pointer to the
@@ -32,9 +39,12 @@
                 </p>
             </div>
             <div class="col-4">
+                <pre>
+
+                </pre>
                 <div class="listingblock">
                     <div class="content">
-                        <pre class="highlight"><code class="language-console" data-lang="console">$ git branch testing</code></pre>
+                        <pre class="highlight fs-8"><code class="language-console " data-lang="console">$ git branch testing</code></pre>
                     </div>
                 </div>
             </div>
@@ -47,9 +57,12 @@
                     If Git cannot do it cleanly, it will not let you switch at all.</p>
             </div>
             <div class="col-4">
+                <pre>
+
+                </pre>
                 <div class="listingblock">
                     <div class="content">
-                        <pre class="highlight"><code class="language-console" data-lang="console">$ git checkout testing</code></pre>
+                        <pre class="highlight fs-8"><code class="language-console" data-lang="console">$ git checkout testing</code></pre>
                     </div>
                 </div>
             </div>
@@ -62,7 +75,7 @@
                 <div class="col-4">
                     <div class="listingblock">
                         <div class="content">
-                            <pre class="highlight"><code class="language-console" data-lang="console">$ git checkout -b < newbranchname > </code></pre>
+                            <pre class="highlight fs-8"><code class="language-console" data-lang="console">$ git checkout -b < newbranchname > </code></pre>
                         </div>
                     </div>
                 </div>
@@ -75,6 +88,9 @@
                     of each merge commit. Here we have two branches: a master and a stage. We should merge the stage
                     branch to the master branch..</p>
             </div>
+            <div class="col-4">
+                    <img src="/static/images/merge.jpg" class="img-fluid py-5" alt="prodwork">
+             </div>
             <div class="col-8">
                 <p class="fs-5"><span class="fs-4">How Merging works: </span>
                     Before the merging process we should take some steps.
@@ -89,14 +105,18 @@
             </div>
                 <div class="col-4">
                     <div class="listingblock">
+                        <pre></pre>
                         <div class="content">
-                            <pre class="highlight"><code class="language-console" data-lang="console">$ git status</code></pre>
+                            <pre></pre>
+                            <pre class="highlight fs-8"><code class="language-console" data-lang="console">$ git status</code></pre>
                         </div>
                         <div class="content">
-                            <pre class="highlight"><code class="language-console" data-lang="console">$ git checkout < receiving branch ></code></pre>
+                            <pre></pre>
+                            <pre class="highlight fs-8"><code class="language-console" data-lang="console">$ git checkout < receiving branch ></code></pre>
                         </div>
                         <div class="content" >
-                            <pre class="highlight"><code class="language-console" data-lang="console">$git merge < branch name > </code></pre>
+                            <pre></pre>
+                            <pre class="highlight fs-8"><code class="language-console" data-lang="console">$git merge < branch name > </code></pre>
                         </div>
                     </div>
                 </div>
@@ -143,16 +163,20 @@
             <div class="col-4">
                         <div class="listingblock">
                             <div class="content">
-                                <pre class="highlight"><code class="language-console" data-lang="console">$ git tag --l </code></pre>
+                                <pre class="highlight fs-8"><code class="language-console" data-lang="console">$ git tag --l </code></pre>
                             </div>
+
                             <div class="content">
-                                <pre class="highlight"><code class="language-console" data-lang="console">$ git tag -a v1.4 -m "my version 1.4"</code></pre>
+                                <pre></pre>
+                                <pre class="highlight fs-8"><code class="language-console" data-lang="console">$ git tag -a v1.4 -m "my version 1.4"</code></pre>
+                            </div>
+
+                            <div class="content" >
+                                <pre></pre>
+                                <pre class="highlight fs-8"><code class="language-console" data-lang="console">$git push origin v1.5 </code></pre>
                             </div>
                             <div class="content" >
-                                <pre class="highlight"><code class="language-console" data-lang="console">$git push origin v1.5 </code></pre>
-                            </div>
-                            <div class="content" >
-                                <pre class="highlight"><code class="language-console" data-lang="console">$git push origin v1.5 </code></pre>
+                                <pre class="highlight fs-8"><code class="language-console" data-lang="console">$git tag -d v1.5 </code></pre>
                             </div>
                         </div>
             </div>

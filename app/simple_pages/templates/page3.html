@@ -1,4 +1,137 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 3
+
+    <div class="container-fluid py-3"><h4><u>What is Pytest?</u></h4>
+        <p class="fs-5"><span class="fs-3">P</span>ytest is a python based testing framework, which is used
+            to write and execute test codes. In the present days of REST services, pytest is mainly used
+            for API testing even though we can use pytest to write simple to complex tests,
+            i.e., we can write codes to test API, database, UI, etc
+        </p>
+                <p class="fs-5">Pytest can be performed from pycharm terminal by the following:<br>
+                </p>
+    </div>
+    <div class="listingblock">
+                    <div class="content">
+                        <pre class="highlight fs-5"><code class="language-console " data-lang="console">$ pytest --pylint --cov </code></pre>
+                    </div>
+                </div>
+    </div>
+        <div class="row align-items-start">
+        <div class="col-6">
+            <h4 align="center">Test case 1</h4>
+            <pre class="fs-6" >
+                def test_request_page1(client):
+                """This makes the index page"""
+                response = client.get("/page1")
+                assert response.status_code == 200
+                assert b"What is Git" in response.data
+
+
+
+            </pre>
+        </div>
+        <div class="col-6">
+            <h4 align="center">Test case 2</h4>
+            <pre class="fs-6">
+                def test_context_variables_year(client):
+                """This tests checks if the copyright and
+                current year are printed"""
+                response = client.get("/")
+                current_date_time = datetime.datetime.now()
+                date = current_date_time.date()
+                year = date.strftime("%Y")
+                test_string = f"Copyright: {year}"
+                content = bytes(test_string, 'utf-8')
+                assert response.status_code == 200
+                assert content in response.data
+            </pre>
+        </div>
+        </div>
+<p class="fs-5"><em>Test case 1</em> checks  if , the page successfully responded (status_code = 200) , and checks if the text “what is git ”  present in the page1 <br>
+                </p>
+    <p class="fs-5"><em>Test case 2</em> checks  if , the page successfully responded (status_code = 200) , and checks if the date is current year in copyright <br>
+                </p>
+    <div class="row align-items">
+    <h4><u>Flask & Flask Blueprint</u></h4>
+        <p class="fs-5"><span class="fs-3\5">Flask is a micro web framework written in Python. It is classified as a
+        microframework because it does not require particular tools or libraries. It has no database abstraction layer,
+        form validation, or any other components where pre-existing third-party libraries provide common function</span></p>
+        <p class="fs-5"><span class="fs-3\5">A Blueprint is a way to organize a group of related views and other code.
+            Rather than registering views and other code directly with an application, they are registered with a
+            blueprint. Then the blueprint is registered with the application when it is available in the factory function.</span></p>
+        <div class="col-8 fs-5">
+                    <h5>Outline</h5>
+                    <p>  Project 1 <- Root of the project<br>
+                            • github<br>
+                                   &nbsp &nbsp• workflows <- contains workflows for both dev and prod<br>
+                                   &nbsp &nbsp &nbsp &nbsp• dev.yml <- Devlopment Workflow in GitHub Actions<br>
+                                   &nbsp &nbsp &nbsp &nbsp• prod.yml<- Production Workflow in GitHub Actions<br>
+                            • pytest cache <-  pytest History<br>
+                            • app <- application folder<br>
+
+                                    &nbsp&nbsp• context processors<br>
+                                    &nbsp&nbsp&nbsp&nbsp• init.py<-used to inject a new variable into the context of template<br>
+                                    &nbsp&nbsp• simple_pages<br>
+                                    &nbsp&nbsp• templates<br>
+                                    &nbsp&nbsp&nbsp&nbsp• index.html <- home/index page of the website<br>
+                                    &nbsp&nbsp&nbsp&nbsp• page1.html <- Content for GIT<br>
+                                    &nbsp&nbsp&nbsp&nbsp• page2.html <- Content for Docker<br>
+                                    &nbsp&nbsp&nbsp&nbsp• page3.html <- Content for Python/Flask<br>
+                                    &nbsp&nbsp&nbsp&nbsp• page4.html <- Content for CI/CD<br>
+                                    &nbsp&nbsp• _init_Py <- configures an instance of the Flask application<br>
+                                    &nbsp&nbsp• static<br>
+                                    &nbsp&nbsp&nbsp&nbsp• CSS <- CSS styling<br>
+                                    &nbsp&nbsp&nbsp&nbsp• images <- images folder<br>
+                                    &nbsp&nbsp&nbsp&nbsp• js <- js pages<br>
+                                    &nbsp&nbsp• templates<br>
+                                    &nbsp&nbsp&nbsp&nbsp• base.html <- base html for all other pages<br>
+                                    &nbsp&nbsp&nbsp&nbsp• _init_py <- configures an instance of the Flask application<br>
+                                    &nbsp&nbsp&nbsp&nbsp• _run_py <- run application in production<br>
+                            • tests
+                                    &nbsp&nbsp• init_.py <- configure test for Flask Application<br>
+                                    &nbsp&nbsp• conftest. py <- Configuration test cases<br>
+                                    &nbsp&nbsp• context _process test. py <- test cases for context_proess<br>
+                                    &nbsp&nbsp• simple pages_test.py <- test cases fortemplate pages<br>
+
+                            • coverage<br>
+                            • .coveragerc <- coverage.py controller<br>
+                            • .dockerignore <-list of  files to exclude when building image.<br>
+                            • .gitignore <- list of untracked files to ignore by Git.<br>
+                            • pylintre <- file to ignore certain checks in pylint<br>
+                            • docker-compose.yml<- Orchestration file that contains the
+                                configuration to develop locally, it overrides the Dockerfile
+                                to run the flask development server instead of running the
+                                gunicorn server that is used for hosting on Heroku<br>
+                            • Dockerfile <- File used to create an image to run in a container
+                                that runs the program<br>
+                            • heroku.yml <- configuration file for  building image in heroku apps<br>
+                            • pytest.ini <- pytest configuration file<br>
+                            • readme.md	 <- context document for application<br>
+                            • requirements.txt <- python package document<br>
+                            • setup.py <- helps to install python packages<br>
+                      </p>
+        </div>
+        <div class="col-4">
+                        <pr>
+
+
+                        </pr>
+                        <img src="/static/images/outline1.jpg" class="img-fluid py-5" alt="prodwork">
+                        <img src="/static/images/outline2.jpg" class="img-fluid py-5" alt="workflow">
+
+            <div class="card mt-3" style="width: 22rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Links</h5>
+                    <p><a href="https://github.com/RohitD007/Flask-Application/tree/master/tests">Flask PyTest </a></p>
+                    <p><a href="https://github.com/RohitD007/Flask-Application">Github Project</a></p>
+                    <p><a href="https://flask.palletsprojects.com/en/2.0.x/tutorial/views/">Flask Blueprint</a></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </div >
+
+
+
 {% endblock %}
