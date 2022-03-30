@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block content %}
+     <div class="row">
+
+        <div >
+            <h4>Why is test important ?</h4>
+            <p class="fs-5">
+               <em>Testing provides an empirical feedback loop for development. That’s how testing keeps us safe.
+                   With tests, we know when things break. Without tests, coding can be dangerous. We don’t want to
+                   deploy bugs.Primary goal of  testing is to detect as many bugs and inconsistencies in the initial stages
+                   of the application development as possible.Many major software program development failures can be
+                   traced back to inadequate or a complete lack of testing.
+               </em>
+            </p>
+        </div>
+        <div class="col-8">
+            <h4>AAA Test</h4>
+            <ol class="fs-5">
+                    <li><b>Arrange</b> inputs and targets. Arrange steps should set up the test case. Does the test
+                        require any objects or special settings? Does it need to prep a database? Does it need to log
+                        into a web app? Handle all of these operations at the start of the test.</li>
+                    <li><b>Act</b>  on the target behavior. Act steps should cover the main thing to be tested.
+                        This could be calling a function or method, calling a REST API, or interacting with a web page.
+                        Keep actions focused on the target behavior.</li>
+                    <li><b>Assert</b> expected outcomes. Act steps should elicit some sort of response.
+                        Assert steps verify the goodness or badness of that response. Sometimes, assertions are as
+                        simple as checking numeric or string values. Other times, they may require checking multiple
+                        facets of a system. Assertions will ultimately determine if the test passes or fails.</li>
+
+                    </ol>
+            <h5>Below is demonstration of AAA test in our calculator python  app</h5>
+            <p class="fs-5">As seen in the screenshot for our test cases for the calculator,you can observe how we have implemented the AAA TEST</p>
+            <ol class="fs-5">
+
+            <li>In Arrange step,we are retrieving our data from a tuple_list for addition and subtraction operations </li>
+            <li>In Act step,we call the function for our addition and subtraction ,pass our tuple_list of input from arrange step as parameter and store the output in result </li>
+            <li>In assert step,we are verifying and validation whether our result is as expected </li>
+                    </ol>
+
+        </div>
+        <div class="col-4">
+                    <img src="/static/images/aaa.png" class="img-fluid" alt="AAA">
+            <pre>
+            </pre>
+                    <img src="/static/images/aaatest.png" class="img-fluid" alt="AAA">
+        </div>
+
+         <div class="col-6 fs-5">
+            <h4>Pylint</h4>
+            <p>Pylint is a tool that checks for errors in Python code, tries to enforce a coding standard and looks for
+                code smells. It can also look for certain type errors, it can recommend suggestions about how particular
+                blocks can be refactored and can offer you details about the code's complexity.Pylint will display a
+                number of messages as it analyzes the code and it can also be used for displaying some statistics about
+                the number of warnings and errors found in different files. The messages are classified under various
+                categories such as errors and warnings.
+            </p>
+             <p>In our app we are using the pylint tool on docker container terminal by following command</p>
+             <pre>pytest--pylint</pre>
+             <p>Pylint also allows us to enable and disable the messages we want to receive by editing in configuration file </p>
+             <pre>enable=c-extension-no-member</pre>
+             <pre>disable=raw-checker-failed, ad-inline-option, locally-disabled, file-ignored,</pre>
+
+         </div>
+         <div class="col-6">
+             <pre>
+
+             </pre>
+                    <img src="/static/images/pylint.png" class="img-fluid" alt="pylint">
+        </div>
+
+         <div class="col-6 fs-5">
+            <h4>Pytest</h4>
+            <p>The pytest framework makes it easy to write small tests, yet scales to support complex functional
+                testing for applications and libraries.</p>
+             <p>Features of Pytest framework are as follows:</p>
+             <ol class="fs-5">
+            <li>Detailed info on failing assert statements (no need to remember self.assert* names) </li>
+            <li>Auto-discovery of test modules and functions</li>
+            <li>Modular fixtures for managing small or parametrized long-lived test resources </li>
+            <li>Rich plugin architecture, with over 315+ external plugins</li>
+             </ol>
+             <p>In our app we are using the pytest tool on docker container terminal by following command</p>
+             <pre>pytest</pre>
+
+
+         </div>
+         <div class="col-6">
+                    <img src="/static/images/pytest.png" class="img-fluid" alt="pylint">
+        </div>
+         <div class="col-6 fs-5">
+            <h4>Coverage</h4>
+            <p>code coverage is a measure of exhaustiveness of a test suite. 100% code coverage means that a
+                system is fully tested. It monitors your program, noting which parts of the code have been executed,
+                then analyzes the source to identify code that could have been executed but was not.</p>
+             <p>Features of coverage  are as follows:</p>
+             <ol class="fs-5">
+            <li>By default it will measure line (statement) coverage. </li>
+            <li>It can tell you what tests ran which lines.</li>
+            <li>It can produce reports in a number of formats: text, HTML, XML, LCOV, and JSON. </li>
+             </ol>
+             <p>In our app we are using the pytest plugin so we can generate coverage report by following command</p>
+             <pre>pytest --cov</pre>
+             <p>Details about coverage in each files in HTML format  can be found by running the following command:</p>
+             <pre>coverage html</pre>
+             <p>It creates a detailed report of all the files and the lines missed in them </p>
+
+
+         </div>
+         <div class="col-6">
+              <img src="/static/images/coverage.png" class="img-fluid" alt="pylint">
+             <pre></pre>
+             <img src="/static/images/coveragereport.png" class="img-fluid" alt="pylint">
+        </div>
+        <div class="col-8 fs-5">
+            <h4>Unit Test</h4>
+            <p>Unit testing involves testing individual components of the software program or application.
+                The main purpose behind this is to check that all the individual parts are working as intended.
+                A unit is known as the smallest possible component of software that can be tested.
+                Generally, it has a few inputs and a single output.Unit test cases should be independent so that if
+                there are any changes required, they can easily be made without the other ones being affected.
+                Only one piece of code should be tested at a time</p>
+            <p>Workflow of Unit Test case </p>
+             <ol class="fs-5">
+            <li>Create the test cases </li>
+            <li>Review or rework</li>
+            <li>Baseline</li>
+            <li>Execute test cases</li>
+             </ol>
+             <p>In our  calculator app we are using unit test as follows: </p>
+             <p>our operation class in made up of different operations.
+             we break down this operations  in individual unit and validate them in small unit test cases. </p>
+
+
+         </div>
+         <div class="col-4">
+              <img src="/static/images/unit.png" class="img-fluid" alt="pylint">
+              <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title"> Resource Links</h5>
+                    <p class="fs-5"><a href="https://pylint.pycqa.org/en/latest/">AAA Test</a></p>
+                    <p class="fs-5"><a href="https://docs.pytest.org/en/6.2.x/">Pylint </a></p>
+                   <p class="fs-5"><a href="https://docs.pytest.org/en/6.2.x/">Pytest  </a></p>
+                   <p class="fs-5"><a href="https://realpython.com/python-namespaces-scope/">Unit Test  </a></p>
+                </div>
+        </div>
+         </div>
+
+            </div>
+{% endblock %}

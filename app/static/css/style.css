@@ -3,4 +3,10 @@ font-size: 200%;
     background-color:#f4f0ec;
 }
 
+.navbar-toggler {
+    border: 3px solid #303030 !important;
+}
 
+.item {
+    height: 500px;
+}

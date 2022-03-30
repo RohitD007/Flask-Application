@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+
+        <div >
+            <h2>OOP Demonstration in Calculator App</h2>
+            <p class="fs-5"><em>My Calculator app is designed on the principles of Object oriented principles.With the help of
+                calculator app ,I am going to show how the four major concepts of Encapsulation,Inheritance,Abstraction
+                and Polymorphism were implemented</em></p>
+        </div>
+        <div class="col-8 fs-5">
+            <h5>Encapsulation</h5>
+            <p>Encapsulation is the  idea of wrapping data and the methods that work on data within one unit.
+                This puts restrictions on accessing variables and methods directly and can prevent the accidental
+                modification of data. </p>
+            <p>In  our calculator app , this principle is demonstrated by calculator class. </p>
+            <p>Inside the static methods subtract  and multiply ,If you observe the calculation variable holds
+                the object of class subtract and multiply.It encapsulates the functionality and the list of data that
+                the operation needs to be performed to get the result  </p>
+
+        </div>
+        <div class="col-4">
+                    <img src="/static/images/encap.png" class="img-fluid" alt="prodwork">
+        </div>
+          <div class="col-8 fs-5">
+            <h5>Inheritance</h5>
+            <p>Inheritance is the capability of one class to derive or inherit the properties from another class.
+                It also gives child class the abiltiy to override the functionality of the inherited class from the parent class   </p>
+            <p>In  our calculator app , this principle is demonstrated by calculation class. </p>
+            <p>If you observe the parent calculation class has two methods to  create a tuple list  and convert the values to float </p>
+            <p>when our child class Addition extends   the parent class ,the methods of parent class are inherited in Addition class.
+            It will create a tuple list of your inputs and convert the values to float without you specifying them.
+                This methods can be reused in any number of  child classes extended from Calculation parent class.</p>
+        </div>
+        <div class="col-4">
+                    <img src="/static/images/calc_par.png" class="img-fluid" alt="prodwork">
+                    <img src="/static/images/calc_child.png" class="img-fluid" alt="prodwork">
+        </div>
+        <div class="col-8 fs-5">
+            <h5>Abstraction </h5>
+            <p>An abstract class can be considered as a blueprint for other classes. A class which contains one or more
+                abstract methods is called an abstract class. An abstract method is a method that has a declaration but
+                does not have an implementation.Abstraction is used to hide the internal functionality of the function
+                from the users. The users only interact with the basic implementation of the function, but inner working
+                is hidden. </p>
+            <p>In  our calculator app , this principle is demonstrated as follows: </p>
+            <p>Inside the main calculator class ,we call the multiplication class from calculations class  </p>
+            <p>Inside the multiplication class ,we call the get result method </p>
+            <p>Inside the get result method,  the multiply method from operations is called </p>
+            <p>Finally only output of get result method is retrieved from  the main calculator class</p>
+
+        </div>
+        <div class="col-4">
+                    <img src="/static/images/calc_main.png" class="img-fluid py-3" alt="prodwork">
+                     <img src="/static/images/calc_mult.png" class="img-fluid" alt="prodwork">
+                     <img src="/static/images/ops_mult.png" class="img-fluid" alt="prodwork">
+        </div>
+        <div class="col-8 fs-5">
+            <pre>
+            </pre>
+            <h5>Polymorphism </h5>
+            <p>The word polymorphism means having many forms. In programming, polymorphism means the same function name
+                (but different signatures) being used for different types. </p>
+            <p>In  our calculator app , this principle is demonstrated as follows: </p>
+            <p>Inside the main calculator class ,we call the get_result() method which can be called on any operation.
+            </p>
+
+
+        </div>
+        <div class="col-4">
+                    <img src="/static/images/main.png" class="img-fluid py-5" alt="prodwork">
+
+        </div>
+     <div class="row">
+
+
+
+            <div>
+                    <h5 class="">Resource links</h5>
+                    <p class="fs-5"><a href="https://www.geeksforgeeks.org/python-programming-language/?ref=shm"> OOP Principles of Python</a>
+
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

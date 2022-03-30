@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+
+        <div>
+            <h2>OOP Glossary</h2>
+            <h5>Object oriented Programming</h5>
+            <p class="fs-5">
+               <em> Python is a multi-paradigm programming language. It supports different programming approaches.
+                   One of the popular approaches to solve a programming problem is by creating objects. This is known
+                   as Object-Oriented Programming (OOP).It aims to implement real-world entities like inheritance,
+                   polymorphisms, encapsulation, etc. in the programming. The main concept of OOPs is to bind the data
+                   and the functions that work on that together as a single unit so that no other part of the code can
+                   access this data.
+               </em>
+
+            </p>
+        </div>
+        <div class="col-8">
+            <h5> OOP TERMS</h5>
+            <ul class="fs-5">
+                <li><h5>instantiation</h5></li>
+                <p>Instantiating a class is creating a copy of the class which inherits all class variables and methods
+                    . Instantiating a class in Python is simple. To instantiate a class, we simply call the class as
+                    if it were a function, passing the arguments that the __init__ method defines. The return value
+                   will be the newly created object</p>
+                <li><h5>object</h5></li>
+                <p>An instance of a class that is created at runtime is called object.An object (instance) is an
+                    instantiation of a class. When class is defined, only the description for the object is defined.
+                    Therefore, no memory or storage is allocated.</p>
+                <p>The example for object of parrot class can be:</p>
+                <pre>
+                obj = Parrot()</pre>
+                <p>Here, <var>obj</var> is an object of class <code>Parrot</code>.</p>
+                <li> <h5>Class</h5></li>
+                <p>A class is a blueprint for the object. We can think of class as a sketch of a parrot with labels.
+                    It contains all the details about the name, colors, size etc. Based on these descriptions, we can
+                    study about the parrot. Here, a parrot is an object.
+                    The example for class of parrot can be :</p>
+                <pre>class Parrot:</pre>
+                           <pre>    pass</pre>
+                <p>Here, we use the <code>class</code> keyword to define an empty class <var>Parrot</var>. From class,
+                    we construct instances. An instance is a specific object created from a particular class.</p>
+
+                <li><h5>namespace</h5></li>
+                <p>A namespace is a collection of currently defined symbolic names along with information about the
+                    object that each name references. You can think of a namespace as a dictionary in which the keys
+                    are the object names and the values are the objects themselves. Each key-value pair maps a name to
+                    its corresponding object.</p>
+                    <p>In python there are 4 namespaces:</p>
+                    <ol>
+                        <li><p><b>Built-In</b>The built-in namespace contains the names of all of Python’s built-in objects.</p>
+                        </li>
+                        <li><p><b>Global</b>The global namespace contains any names defined at the level of the main program.</p></li>
+                        <li><p><b>Enclosing</b>when you define a function within a function .The namespace created for function enclosing
+                            the inside function is called enclosing namespace</p></li>
+                        <li><p><b>Local</b>namespace is local to the function and remains in existence until the function terminates.</p></li>
+                    </ol>
+                <li><h5>constructor</h5></li>
+                <p>constructors are generally used for instantiating an object. The task of constructors is to
+                    initialize(assign values) to the data members of the class when an object of the class is created.
+                    In Python the __init__() method is called the constructor and is always called when an object is created.</p>
+                    <p>In python there are 2 types of constructors:</p>
+                    <ol>
+                        <li>Default</li>
+                        <li>Parameterized</li>
+                    </ol>
+                <li><h5>fixture</h5></li>
+                <p>In testing, a fixture provides a defined, reliable and consistent context for the tests. This could
+                    include environment (for example a database configured with known parameters) or content.
+                    Fixtures define the steps and data that constitute the arrange phase of a test.
+                    In pytest, they are functions you define that serve this purpose. They can also be used to define a test’s act phase;
+                    this is a powerful technique for designing more complex tests.</p>
+                <li><h5>type hint</h5></li>
+                <p>type hinting is a formal solution to statically indicate the type of a value within your Python code.
+                    The idea of hints is they have no runtime effect, they're only hints and are not enforced on their own.
+                    As the code base gets larger, type hints can help to debug.
+                </p>
+                <li><h5>type cast</h5></li>
+                <p>Type Casting is the method to convert the variable data type into a certain data type in order to the
+                    operation required to be performed by users.The examples below shows Python will cast values
+                    as float for integer</p>
+                <pre>a = 5</pre>
+                <pre># typecast to float</pre>
+                <pre>n = float(a)</pre>
+                <li><h5>unit test</h5></li>
+                <p>Unit testing ensures that all the individual units are performing as they’re supposed to and is
+                    usually done in the developmental phase. To ensure optimum performance of the software, this form of
+                    testing needs to be implemented when required.The primary focus of unit testing is test an individual
+                    unit of system to analyze, detect, and fix the errors. Python provides the unittest module to test the
+                    unit of source code.
+                    </p>
+                <li><h5>static method</h5></li>
+                <p>A static method is a method that is bound to the class and not the object of the class.
+                    A static method can’t access or modify the class state. It is present in a class because it
+                    makes sense for the method to be present in class.</p>
+                <pre>class C(object):</pre>
+                <pre>@staticmethod</pre>
+                <pre>def fun(arg1, arg2, ...)</pre>
+                <pre>returns static method for function fun.
+                </pre>
+                <li><h5>static property</h5></li>
+                <p>When we declare a variable inside a class but outside any method, it is called as class or static
+                    variable in python. Class or static variable can be referred through a class but not directly through
+                    an instance.</p>
+                <li><h5>Encapsulation</h5></li>
+                <p>Encapsulation  describes the idea of wrapping data and the methods that work on data within one unit.
+                    This puts restrictions on accessing variables and methods directly and can prevent the accidental
+                    modification of data. To prevent accidental change, an object’s variable can only be changed by an
+                    object’s method. Those types of variables are known as private variables.</p>
+                   <p> A class is an example of encapsulation as it encapsulates all the data that is member functions, variables, etc.</p>
+                <li><h5>Inheritance</h5></li>
+                <p>Inheritance is the capability of one class to derive or inherit the properties from another class.
+                    The class that derives properties is called the derived class or child class and the class from which
+                    the properties are being derived is called the base class or parent class.</p>
+                <p>It provides the reusability of a code. We don’t have to write the same code again and again.
+                    Also, it allows us to add more features to a class without modifying it.</p>
+                <li><h5>Polymorphism</h5></li>
+                <p>Polymorphism simply means having many forms.This is particularly useful in cases where the method
+                    inherited from the parent class doesn't quite fit the child class. In such cases, we re-implement
+                    the method in the child class.</p>
+                <p>Example of polymorphism would be  The shape  class which could have two characteristics: area and perimeter. There could be two
+                    type of shapes (inherited) called circle and square. We would indicate in the shape class, that there
+                    are two values to be determined, area and perimeter</p>
+
+                <li><h5>Abstraction</h5></li>
+                <p>Abstraction is used to hide the internal functionality of the function from the users. The users only interact
+                    with the basic implementation of the function, but inner working is hidden. User is familiar with that
+                    "what function does" but they don't know "how it does."</p>
+
+
+                <li><h5>SOLID</h5></li>
+                <p>SOLID is an acronym for the first five object-oriented design (OOD) principles by Robert C. Martin
+                   .These principles establish practices that lend to developing software with
+                    considerations for maintaining and extending as the project grows. Adopting these practices can also
+                    contribute to avoiding code smells, refactoring code, and Agile or Adaptive software
+                    development.SOLID stands for:<br>1. <b>S</b>- Single-responsiblity Principle <br> 2. <b>O</b> - Open-closed
+                    Principle <br> 3. <b>L</b> - Liskov Substitution Principle <br> 4. <b>I</b> - Interface Segregation Principle <br>
+                    5. <b>D</b> - Dependency Inversion Principle</p>
+                <li><h5>Design Pattern </h5></li>
+                <p>Design patterns are typical solutions to common problems in software design. Each pattern is like
+                    a blueprint that you can customize to solve a particular design problem in your code.</p>
+                <p>The Pattern consist of the following:</p>
+                <ol>
+                    <li><b>Intent</b> of the pattern briefly describes both the problem and the solution.</li>
+                    <li><b>Motivation</b> further explains the problem and the solution the pattern makes possible.</li>
+                    <li><b>Structure</b> of classes shows each part of the pattern and how they are related.</li>
+                    <li><b>Code example</b> in one of the popular programming languages makes it easier to grasp the
+                        idea behind the pattern.</li>
+                    </ol>
+                <pre></pre>
+                 <p>Types of patterns:</p>
+                <ol>
+                 <li><b>Creational patterns </b>  provide object creation mechanisms that increase flexibility and reuse of existing code.</li>
+                    <li><b>Structural patterns</b> explain how to assemble objects and classes into larger structures, while keeping these structures
+                        flexible and efficient.</li>
+                    <li><b>Behavioral patterns</b> take care of effective communication and the assignment of responsibilities between objects.</li>
+                </ol>
+
+            </ul>
+
+        </div>
+        <div class="col-4">
+                   <div class="card mt-3" style="width: 24rem;">
+                <div class="card-body">
+                    <h5 class="card-title"> Resource Links</h5>
+                    <p class="fs-5"><a href="https://www.geeksforgeeks.org/python-oops-concepts/"> OOP Concepts for Python</a></p>
+                    <p class="fs-5"><a href="https://www.programiz.com/python-programming/object-oriented-programming">Python OOP  </a></p>
+                   <p class="fs-5"><a href="https://www.geeksforgeeks.org/class-method-vs-static-method-python/">Static Method  </a></p>
+                   <p class="fs-5"><a href="https://realpython.com/python-namespaces-scope/">Python NameSpaces  </a></p>
+                     <p class="fs-5"><a href="https://njit.instructure.com/courses/21647/modules/items/780709">Type Hinting</a></p>
+                    <p class="fs-5">
+                        <a href="https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design#single-responsibility-principle">SOLID
+                            Principles</a></p>
+                    <p class="fs-5"><a href="https://refactoring.guru/">Design Patterns </a></p>
+                </div>
+            </div>
+        </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

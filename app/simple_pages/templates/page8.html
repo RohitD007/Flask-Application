@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="row">
+
+        <div >
+            <h2>SOLID Demonstration in Calculator App</h2>
+            <p class="fs-5"><em></em></p>
+        </div>
+        <div class="col-8 fs-5">
+            <h5>S - Single-responsiblity Principle</h5>
+            <p>A class should have one and only one reason to change, meaning that a class should have only one job. </p>
+           <p>In  our calculator app , this principle is demonstrated as follows: </p>
+            <p>In Calculation.py we have individual classes that perform only one job.
+                For eg. Multiplication class will only one job  multiply the values provided </p>
+
+        </div>
+        <div class="col-4">
+                    <img src="/static/images/calc_mult.png" class="img-fluid py-3" alt="prodwork">
+        </div>
+          <div class="col-8 fs-5">
+            <h5>O - Open-closed Principle</h5>
+            <p>Objects or entities should be open for extension but closed for modification.This means that a class
+                should be extendable without modifying the class itself.</p>
+            <p>In  our calculator app , this principle is demonstrated as follows: </p>
+            <p>when our child class Addition extends   the parent class ,the methods and attributes of parent class are inherited in Addition class.
+                This methods can be extended in any number of  child classes but it does not modify the actual parent class.
+                If we want to add a new operation like square root we simply can extend a new  class called square root </p>
+         <pre></pre>
+          <h5>L - Liskov Substitution Principle</h5>
+            <p>every subclass or derived class should be substitutable for their base or parent class. </p>
+            <p>In  our calculator app , this principle is demonstrated as follows: </p>
+            <p>Inside the calculation class ,we extend the addition,subtraction,multiplication and division class.
+                Changing or removing this child class does not affect our parent class in any way</p>
+          </div>
+        <div class="col-4">
+                    <img src="/static/images/calc_par.png" class="img-fluid py-3" alt="prodwork">
+                    <img src="/static/images/calc_child.png" class="img-fluid py-3" alt="prodwork">
+        </div>
+
+        <div class="col-8 fs-5">
+            <pre>
+            </pre>
+            <h5>I - Interface Segregation Principle</h5>
+            <p>A client should never be forced to implement an interface that it doesn’t use, or clients
+                shouldn’t be forced to depend on methods they do not use.</p>
+            <p>In  our calculator app , this principle is demonstrated as follows: </p>
+            <p>Inside the calculation class ,the subclass multiplication only uses the
+                multiply function from operation class.It doesn't use any unnecessary operation or calculation functions
+                not needed.Similarly, it goes for every other classes Addition,Subtraction,Division.
+            </p>
+
+
+        </div>
+        <div class="col-4">
+                    <img src="/static/images/calc_mult.png" class="img-fluid " alt="prodwork">
+                    <img src="/static/images/multiply_main.png" class="img-fluid " alt="prodwork">
+
+        </div>
+        <div class="col-8 fs-5">
+            <pre>
+            </pre>
+            <h5>D - Dependency Inversion Principle</h5>
+            <p>Entities must depend on abstractions, not on concretions. It states that the high-level module must not
+                depend on the low-level module, but they should depend on abstractions. </p>
+            <p>In  our calculator app , this principle is demonstrated as follows: </p>
+            <p>Inside the main calculator class ,we call the multiplication class from calculations class.
+                Inside the multiplication class ,we call the get result method.Inside the get result method,the multiply
+                method from operations is called. Finally only output of get result method is retrieved from  the main
+                calculator class</p>
+        </div>
+        <div class="fs-5">
+        <h3>Design Pattern </h3></li>
+            <em>
+                <p>Design patterns are typical solutions to common problems in software design. Each pattern is like
+                    a blueprint that you can customize to solve a particular design problem in your code.</p>
+                <p>Types of patterns:</p>
+                <ol>
+                 <li><b>Creational patterns </b>  provide object creation mechanisms that increase flexibility and reuse of existing code.</li>
+                    <li><b>Structural patterns</b> explain how to assemble objects and classes into larger structures, while keeping these structures
+                        flexible and efficient.</li>
+                    <li><b>Behavioral patterns</b> take care of effective communication and the assignment of responsibilities between objects.</li>
+                </ol>
+            </em>
+        </div>
+        <div class="col-8 fs-5">
+         <h4>Demonstration of  creational pattern called Factory Method in Calculator App :</h4>
+          <p>  Factory Method is a creational design pattern that provides an interface for creating objects in a superclass,
+            but allows subclasses to alter the type of objects that will be created</p>
+            <p>In our calculation class ,we have a factory method to create a tuple_list of input values,but the type of
+                object list which will be created  is decided in subclasses addition ,multiplication and so on </p>
+        </div>
+        <div class="col-4">
+                    <img src="/static/images/factory.png" class="img-fluid py-5 " alt="prodwork">
+
+
+        </div>
+     <div class="row">
+        </div>
+
+
+            <div>
+                    <h5 class="">Resource links</h5>
+                    <p class="fs-5"><a href="https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design">SOLID Principles</a>
+
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
